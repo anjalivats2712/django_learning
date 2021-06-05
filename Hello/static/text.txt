@@ -1,0 +1,1 @@
+this is a text page and everybody can see it so make sure not to put any confidiential in these static files
