@@ -9,9 +9,12 @@ def index(request):
     return render(request,'index.htm',context)
     #return HttpResponse('this is homepage')
 def about(request):
-    return HttpResponse('this is aboutpage')
+    return render(request,'about.htm')
+    #return HttpResponse('this is aboutpage')
 def contact(request):
-    return HttpResponse('this is contactpage')
+    return render(request,'contact.htm')
+    #return HttpResponse('this is contactpage')
 def service(request):
-    return HttpResponse('this is servicepage')
+    return render(request,'service.htm')
+    #return HttpResponse('this is servicepage')
 
