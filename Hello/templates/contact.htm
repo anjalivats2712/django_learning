@@ -18,15 +18,15 @@ Contact
     {% csrf_token %}
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Email">
+        <input type="email" class="form-control"name="email" id="exampleFormControlInput1" placeholder="Enter Your Email">
       </div>
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Name</label>
-        <input type="name" class="form-control" id="exampleFormControlTextarea1" placeholder="Your Name" rows="1">
+        <input type="name" class="form-control"name="name" id="exampleFormControlTextarea1" placeholder="Your Name" rows="1">
       </div>
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Query</label>
-        <input type="Query" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your Query">
+        <input type="Query" class="form-control"name="query" id="exampleFormControlTextarea1" rows="3" placeholder="Your Query">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
