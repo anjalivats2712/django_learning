@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse
 from datetime import datetime
 from newapp.models import Contact
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -20,6 +21,8 @@ def contact(request):
         query=request.POST.get('query')
         contact=Contact(name=name,email=email,query=query,date=datetime.today())
         contact.save()
+        messages.success(request, 'Profile details updated.')
+
         
     return render(request,'contact.htm')
     #return HttpResponse('this is contactpage')
