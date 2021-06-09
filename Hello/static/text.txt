@@ -1,1 +1,18 @@
 this is a text page and everybody can see it so make sure not to put any confidiential in these static files
+
+
+commands
+python manage.py shell
+
+
+from newapp.models import Contact
+
+
+Contact.objects.all()
+Contact.objects.all()[0] !!shows first contact 
+Contact.objects.all()[0].name !!shows name similarily shows email,phone etc.
+Contact.objects.all().first()
+Contact.objects.all().last()
+Contact.objects.filter(name="Anjali Vats")
+Contact.objects.filter(email_startswith="anjalivats")
+
