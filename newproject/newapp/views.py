@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render,HttpResponse
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth.models import User, UserManager
+from django.contrib.auth import authenticate,login
 from django.contrib.auth import logout
 
 
@@ -9,18 +9,20 @@ from django.contrib.auth import logout
 
 def index(request):
     if request.user.is_anonymous:
-        return redirect("/login")
+        return redirect("/logout")
     return render(request,'index.htm')
     #return(request,HttpResponse('this is home page'))
-def login(request):
+def loginuser(request):
     if request.method=="POST":
         username=request.POST.get("username")
         password=request.POST.get("password")
+        print(username,password)
 
         #check if user has entered correct credentials
         user = authenticate(username=username, password=password)
         if user is not None:
         # A backend authenticated the credentials
+            login(request,UserManager)
             return redirect("/")
         else:
         # No backend authenticated the credentials

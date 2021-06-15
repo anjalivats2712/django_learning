@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>hey there</title>
 </head>
 
 <body>
@@ -79,17 +79,15 @@
 
         <main class="form-signin">
             <form method="POST" action="/login">
+            {% csrf_token %}
                 <img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
                 <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
                 <div class="form-floating">
-                    <input type="email" class="form-control" name="email" id="floatingInput"
-                        placeholder="name@example.com">
-                    <label for="floatingInput">Email address</label>
+                    <input type="text" class="form-control" name="username" id="floatingInput" placeholder="your username">
+                    <label for="floatingInput">Username</label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" name="password" id="floatingPassword"
-                        placeholder="Password">
+                    <input type="password" class="form-control"name="password" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Password</label>
                 </div>
 
