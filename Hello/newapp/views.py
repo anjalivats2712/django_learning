@@ -2,6 +2,7 @@ from django.shortcuts import render,HttpResponse
 from datetime import datetime
 from newapp.models import Contact
 from django.contrib import messages
+from django.views.generic import TemplateView
 
 # Create your views here.
 def index(request):
@@ -29,4 +30,7 @@ def contact(request):
 def service(request):
     return render(request,'service.htm')
     #return HttpResponse('this is servicepage')
+
+class New(TemplateView):
+    template_name = "new.htm"
 
