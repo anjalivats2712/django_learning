@@ -9,7 +9,10 @@
 <body>
     <h4>these are the msgs to display</h4>
     <ol>
-        <li>hlo every1</li>
+        {% for post in all_messageapp_list %}
+        <li>{{post}}</li>
+        {% endfor %}
+
     </ol>
 </body>
 </html>
