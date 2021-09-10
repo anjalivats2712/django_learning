@@ -1,7 +1,13 @@
 {% extends 'base.htm' %}
 {% block title %}Homepage{% endblock title %}
 {% block body %}
-homepage
+<div class="container-fluid px-0">
+    <img src='/static/img1.png' alt="" class="d-block w-100">
+</div>
+<div class="mb-3">
+    <h1 class="text-center">HOMEPAGE</h1>
+
+</div>
 <ul>
     {% for msgs in all_msgs_list %}
     <li>{{msgs.text}}</li>
