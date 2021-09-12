@@ -11,3 +11,11 @@ class PostListView(ListView):
 class PostDetailsView(DetailView):
     model=Post
     template_name='detailview.html'
+def written(request):
+    if request.method=="POST":
+        title=request.POST.get('title')
+        author=request.POST.get('author')
+        body=request.POST.get('body')
+        anjali=Post(title=title,author=author,body=body)
+        anjali.save()
+    return render(request,"written.html")
