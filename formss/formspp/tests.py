@@ -27,11 +27,13 @@ class PostModelTest(TestCase):
         self.assertEqual(f"{self.post.title}","leejong")
         self.assertEqual(f"{self.post.auther}","anj27")
         self.assertEqual(f"{self.post.body}","ljs")
+
     def test_post_list_view(self):
         resp=self.client.get(reverse("home"))
         self.assertEqual(resp.status_code,200)
         self.assertTemplateUsed(resp,"home.html")
         self.assertContains(resp,"leejong")
+
     def test_post_details_view(self):
         resp=self.client.get("/post/1")
         no_resp=self.client.get("/post/1000")
@@ -39,6 +41,26 @@ class PostModelTest(TestCase):
         self.assertEqual(no_resp.status_code,404)
         self.assertTemplateUsed(resp,"detail.html")
         self.assertContains(resp,"ljs")
+
+    def test_post_create_view(self):
+        resp=self.client.post(reverse("blog_create"),{"title":"new title","body":"new body","auther":self.user})
+        self.assertEqual(resp.status_code,200)
+        self.assertContains(resp,"new title")
+        self.assertContains(resp,"new body")
+
+    def test_post_update_view(self):
+        resp=self.client.post(reverse("blog_update",args="1"),{"title":"updated title","body":"updated body"})
+        
+        # self.assertContains(resp,"updated title")
+        # self.assertContains(resp,"updated body")
+        self.assertEqual(resp.status_code,302)
+
+    def test_post_delete_view(self):
+        resp=self.client.get(reverse("blog_delete",args="1"))
+        self.assertEqual(resp.status_code,200)
+        
+
+
         
 
 # class HomepageViewTest(TestCase):

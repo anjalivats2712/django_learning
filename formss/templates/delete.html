@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Delete Your Page{% endblock title %}
+
+{% block body %}
+<div class= frms>
+<form action="" method="post">
+{% csrf_token %}
+<h4>Are u sure u want to delete this {{post.title}}</h4>
+<input type="submit" value="confirm"/>
+</form>
+
+</div>
+
+{% endblock body %}

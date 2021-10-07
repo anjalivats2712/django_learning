@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
+from django.urls import reverse
 
 # Create your models here.
 
@@ -15,3 +16,6 @@ class Post(models.Model):
     body=models.TextField()
     def __str__(self):
         return self.title[:30]
+    def get_absolute_url(self):
+        return reverse("blog_detail", args=[str(self.id)])
+    
