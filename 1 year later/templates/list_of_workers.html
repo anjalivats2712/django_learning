@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>List of Workers</h1>
+<ul>
+    {% for userinfo in all_workers_name %}
+    <li>{{ userinfo.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
