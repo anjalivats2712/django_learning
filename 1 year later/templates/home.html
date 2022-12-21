@@ -8,4 +8,11 @@
 {% endfor %}
 <div><a href="{% url 'post_create' %}">Create a post
 </a></div>
+{% if user.is_authenticated %}
+<h3>Hi {{user.username}}</h3>
+<h3><a href="{% url 'logout' %}">Log Out</a></h3>
+
+{% else %}
+<a href="{% url 'login' %}">Log In</a>
+{% endif %}
 {% endblock content %}
