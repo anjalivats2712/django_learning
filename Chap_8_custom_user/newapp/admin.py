@@ -13,4 +13,4 @@ class CustomUserAdmin(UserAdmin):
 
 
 
-admin.site.register(CustomUserModel,)
+admin.site.register(CustomUserModel,UserAdmin)
