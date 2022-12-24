@@ -1,0 +1,7 @@
+{% block content %}
+<form method= "post" action ="">
+    {% csrf_token %}
+    <p>are you sure u want to log out {{user.username}}</p>
+    <input value="logout" type="submit"/>
+</form>
+{% endblock content %}
