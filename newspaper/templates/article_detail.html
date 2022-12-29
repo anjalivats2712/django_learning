@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>{{article.title}}</h3>
+<h5>{{article.body}}</h5>
+{% ifequal request.user article.auther  %}
+<p><a href="{% url 'article_delete' article.pk %}">delete this article</p>
+<p><a href="{% url 'article_update' article.pk %}">edit this article</p>
+{% endifequal %}
+
+<p><a href="{% url 'article_create' %}">create another article</p>
+
+{% for comment in article.comments.all %}
+<p>{{comment.auther}}</p>
+<p>{{comment}}</p>
+
+{% endfor %}
+{% endblock content %}
